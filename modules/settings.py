@@ -34,8 +34,9 @@ class Settings:
         {"name": f"{PINK}♡ Сouple avatar ♡{RESET}", "value": "anime::5, huge::4, kiss:4, high quality avatar::3, girl and boy::5, romantic::3 --v 4 --s 1000 --q 5"}
     ]
 
-    resolutions = [
+    aspect_ratios = [
         {"name": "1:2", "value": "--ar 1:2"},
+        {"name": "2:1", "value": "--ar 2:1"},
         {"name": "2:3", "value": "--ar 2:3"},
         {"name": "3:2", "value": "--ar 3:2"},
         {"name": f"16:9 ({BOLD}Desktop wallpaper{RESET})", "value": "--ar 16:9"},
