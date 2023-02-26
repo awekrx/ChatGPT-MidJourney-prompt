@@ -184,6 +184,8 @@ class Prompt:
                 self.__show(Settings.colors)
                 colors = input(f"-> ")
                 colors = colors.split(",")
+                if colors == ['']:
+                    colors = []
                 color_nubmers = []
                 for color in colors:
                     color = color.replace(" ", "")
