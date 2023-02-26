@@ -45,8 +45,8 @@ class Prompt:
         if not isinstance(type, int) and type < 0 and type > len(Settings.types) - 1:
             raise ValueError(f"Type must be a int and between 0 and {len(Settings.types) - 1}")
         
-        if not isinstance(resolution, int) and resolution < 0 and resolution > len(Settings.resolutions) - 1:
-            raise ValueError(f"Resolution must be a int and between 0 and {len(Settings.resolutions) - 1}")
+        if not isinstance(resolution, int) and resolution < 0 and resolution > len(Settings.aspect_ratios) - 1:
+            raise ValueError(f"Resolution must be a int and between 0 and {len(Settings.aspect_ratios) - 1}")
         
         if not isinstance(renderer, int) and renderer < 0 and renderer > len(Settings.renderers) - 1:
             raise ValueError(f"Renderer must be a int and between 0 and {len(Settings.renderers) - 1}")
@@ -90,7 +90,7 @@ class Prompt:
             renderer_value = Settings.renderers[renderer]["value"]
             content_value = Settings.contents[content]["value"]
             type_value = Settings.types[type]["value"]
-            resolution_value = Settings.resolutions[resolution]["value"]
+            resolution_value = Settings.aspect_ratios[resolution]["value"]
             color_value = ""
             for color in colors:
                 color_value += Settings.colors[color]["value"] + ", "
@@ -164,9 +164,9 @@ class Prompt:
                 
 
                 print(f"{GREEN}Aspect ratio{RESET}")
-                self.__show(Settings.resolutions)
+                self.__show(Settings.aspect_ratios)
                 resolution = input(f"-> ")
-                resolution = self.__check_parameter(resolution, Settings.resolutions, "Resolution")
+                resolution = self.__check_parameter(resolution, Settings.aspect_ratios, "Resolution")
                 
 
                 print(f"{GREEN}Render - Affects things (Beta){RESET}")
