@@ -4,6 +4,8 @@ This is a ChatGPT based prompt generation model for MidJorney. The purpose of th
 
 ## Examples
 
+_See more examples in my [gallery](https://github.com/awekrx/MidJourney-Arts)_
+
 ### Short-weights model
 
 > prompt: `Sakura blossoms::5, pink flowers::4, Licorice plant::3, Japanese landscape::5, octane render::4, landscape desing::4, red::10, purple::10, , high quality photo::5, soft light::2, sharp-focus::3, hyper realism::4 --v 4 --s 1000 --q 5 --ar 16:9`
@@ -12,7 +14,7 @@ This is a ChatGPT based prompt generation model for MidJorney. The purpose of th
 <image
   src="./images/arts/2.png"
   width="512"
-  alt="Realistic"
+  alt="V4"
   >
 </p>
 
@@ -22,7 +24,7 @@ This is a ChatGPT based prompt generation model for MidJorney. The purpose of th
 <image
   src="./images/arts/3.png"
   width="512"
-  alt="Realistic"
+  alt="V4"
   >
 </p>
 
@@ -34,7 +36,7 @@ This is a ChatGPT based prompt generation model for MidJorney. The purpose of th
 <image
   src="./images/arts/4.png"
   width="512"
-  alt="Realistic"
+  alt="V4"
   >
 </p>
 
@@ -44,10 +46,22 @@ This is a ChatGPT based prompt generation model for MidJorney. The purpose of th
 <image
   src="./images/arts/5.png"
   width="512"
-  alt="Realistic"
+  alt="V4"
   >
 </p>
 <p align="center">
+
+## Niji
+
+> prompt: `Stray dog::3, samurai::5, katana::5, dirt road::3, countryside::3, --niji --q 2`
+
+<p align="center">
+<image
+  src="./images/arts/1.png"
+  width="512"
+  alt="Niji"
+  >
+</p>
 
 ## Getting Started
 
@@ -81,34 +95,34 @@ py main.py
 To use this model, you can input the following commands in the console:
 
 1. Select the prompt model;
-    - The short model creates prompts in the format: `Planet::5, rings::4, crater::3, star clusters::5, atmosphere::4, reflection::3, space::5`
-    - The art model creates in the format: `A Victorian-style chair with chrome and ornate decorations reflects a distorted image in the water on the ground. The intricate patterns on the chair add an air of sophistication and elegance to any room. Lighting: Candle Light. Style: Victorian. Details: Cell Shading, atmosphere, ray tracing.`
+   - The short model creates prompts in the format: `Planet::5, rings::4, crater::3, star clusters::5, atmosphere::4, reflection::3, space::5`
+   - The art model creates in the format: `A Victorian-style chair with chrome and ornate decorations reflects a distorted image in the water on the ground. The intricate patterns on the chair add an air of sophistication and elegance to any room. Lighting: Candle Light. Style: Victorian. Details: Cell Shading, atmosphere, ray tracing.`
 2. Select the mid-journey model;
-    - V4 - MidJourney default model;
-    - Niji - MidJourney test model for anime;
-    - Realistic(testp) - MidJourney test model for maximum realism;
+   - V4 - MidJourney default model;
+   - Niji - MidJourney test model for anime;
+   - Realistic(testp) - MidJourney test model for maximum realism;
 3. Add image description and description count;
-    - Anything you wish;
-    - You can specify at the beginning of the url the image to generate based on it;
+   - Anything you wish;
+   - You can specify at the beginning of the url the image to generate based on it;
 4. Choose advanced settings;
 
 If you choose advanced settings:
 
 1. Select image type;
-    - Adds the selected style to the image;
-    - Anime - anime cartoon style;
-    - Photorealistic - maximum quality details;
-    - Avatar - focus on the center of the image;
-    - Couple avatar - Especially for creating avatars that you can share with your soulmate ♡;
+   - Adds the selected style to the image;
+   - Anime - anime cartoon style;
+   - Photorealistic - maximum quality details;
+   - Avatar - focus on the center of the image;
+   - Couple avatar - Especially for creating avatars that you can share with your soulmate ♡;
 2. Choose aspect ratio;
-    - I think everything is clear here;
+   - I think everything is clear here;
 3. Choose rendering:
-    - Changes the generation style. Object details. You'll understand better if you test it;
+   - Changes the generation style. Object details. You'll understand better if you test it;
 4. Choose content refinement;
-    - Specifies what exactly we want to see in the image;
-    - Combining the character description and, for example, the particle mode, you can get very interesting images;
+   - Specifies what exactly we want to see in the image;
+   - Combining the character description and, for example, the particle mode, you can get very interesting images;
 5. Choose color change;
-    - Choose dominant colors separated by commas;
+   - Choose dominant colors separated by commas;
 
 ![Usage preview](./images/usage-preview.png)
 
@@ -163,3 +177,8 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 
 Thanks a lot to the development of AI and separately to [СhatGPT](https://chat.openai.com) for generating the Readme.
+And also [acheong08](https://github.com/acheong08) for creating [ChatGPT](https://github.com/acheong08/ChatGPT).
+
+## Future
+
+- --no parameters from ChatGPT
