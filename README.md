@@ -2,6 +2,13 @@
 
 This is a ChatGPT based prompt generation model for MidJorney. The purpose of this model is to simplify the creation of images and increase their creativity. By introducing a partial hint, ChatGPT creates a follow-up that can be used to stimulate creativity and provide new ideas.
 
+## What's new
+>
+> 04.03.2023
+>
+Added `--no` negations to short-weights model. So far, there may be some shortcomings. If there are any problems, then create an [issue](https://github.com/awekrx/ChatGPT-MidJourney-prompt/issues).
+I would be very grateful for your response.
+
 ## Examples
 
 _See more examples in my [gallery](https://github.com/awekrx/MidJourney-Arts)_
@@ -181,4 +188,8 @@ And also [acheong08](https://github.com/acheong08) for creating [ChatGPT](https:
 
 ## Future
 
-- --no parameters from ChatGPT
+More generation options:
+
+- styles
+- lighting
+- artists style
