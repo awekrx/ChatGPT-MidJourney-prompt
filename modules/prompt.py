@@ -1,4 +1,6 @@
 import os
+import re
+
 from revChatGPT.V1 import Chatbot
 from colorama import init as colorama_init
 from modules.settings import *
@@ -132,7 +134,7 @@ class Prompt:
 
         if response[-1] == ".":
             response = response[:-1]
-
+        
         if mj_model == 2:
             mj_model_value = Settings.mj_models[mj_model]["value"]
             prompt = f"{response}, {mj_model_value}"
@@ -156,6 +158,25 @@ class Prompt:
 
             prompt = f"{response}, {renderer_value}, {content_value}, {color_value}, {type_value} {resolution_value}"
 
+        print(prompt)
+        prompt = prompt.replace(", ", " ")
+        prompt = re.sub(r"\s{2,}", " ", prompt)
+        parameters = []
+        while True:
+            found = re.match(r"--no\s\S+", prompt)
+            if not found:
+                break
+            start = found.start()
+            end = found.end()
+            
+            parameters.append(prompt[start:end])
+            
+            promptlist = list(prompt)
+            for i in range(start, end + 1):
+                promptlist[i] = ""
+            prompt = "".join(promptlist)
+        
+        prompt += " " + " ".join(parameters)
         if url:
             return f"{url} {prompt}"
         else:
