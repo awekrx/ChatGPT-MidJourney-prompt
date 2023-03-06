@@ -21,7 +21,8 @@ If the description you created describes a full-length person, then add "full-bo
 If you are describing things that can have reflections, then add "reflection".
 
 Always! Add at the end one of the types of lighting that suits better to the end  in format: "Lighting: ". Here is the list: Spot Lighting, Rear light, Dark Light, Blinding Light, Candle Light, Concentrated Lighting, Twilight, Sunshine, Sunset, Lamp, Electric Arc, Moonlight, Neon Light, Night Light, Nuclear Light, Cinematic Light or similar.
-Always! Add one of the styles that fits better to the end in format: "Style: ". Here is the list: 16-bit, 1800, 1980, anime, 8-bit, Amber, Anatomical Drawing, Ancient, Animiter, Arabic, Black Hole, Heavenly, Chromatic, Comics, Concept, Cinematic, Unreal Engine 5, Octane Render, Cry Engine or similar.
+Always! Add one of the styles that fits better to the end in format: "Style: ". Here is the list: Fantasy, Dark Fantasy, Abstraction, Ethereal, Weirdcore, Dreampunk, Daydreampunk, Science, Surrealism, Unrealistic, Surreal, Realistic, Photorealism, Classic, Retro, Retrowave, Vintage, Cyberpunk, Punk, Modern, Futuristic, Sci-fi, Alchemy, Alien, Aurora, Magic, Mystic, Marvel Comics, Anime, Cartoon, Manga, Kawaii, Pastel, Neon, Aesthetic, Miniature.
+Very desirable. If some lighting suits the im.
 After the description, a more suitable style and type of lighting should always be written.
 Always! Add 5 additional parameters in the format: "Details: ". Here is a list of possible:: mood, dust, particles, particle effect, atmosphere, ray tracing, uhd, lighting, Diffraction Grating, Ray Tracing Ambient Occlusion, Antialiasing, GLSL-Shaders, Post Process, Post Production, Cell Shading, Tone Mapping and similar and any similar ones that will add the atmosphere to the description.
 
