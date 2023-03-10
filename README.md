@@ -77,7 +77,7 @@ _See more examples in my [gallery](https://github.com/awekrx/MidJourney-Arts)_
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/awekrx/СhatGPT-MidJourney-prompt.git
+git clone https://github.com/awekrx/ChatGPT-MidJourney-prompt.git
 ```
 
 Then install the required packages:

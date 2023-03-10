@@ -111,8 +111,8 @@ class Settings:
         {"name": "Pink", "value": "pink::10"},
         {"name": "Black", "value": "black::10"},
         {"name": "White", "value": "white::10"},
-        {"name": "Gray", "value": "gray::10"},
         {"name": "Brown", "value": "brown::10"},
+        {"name": "Gray", "value": "gray::10"},
         {"name": "Light-Gray", "value": "light-gray::10"},
         {"name": "Dark-Gray", "value": "dark-gray::10"},
     ]
