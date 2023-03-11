@@ -5,73 +5,13 @@ This is a ChatGPT based prompt generation model for MidJorney. The purpose of th
 ## What's new
 >
 > 11.03.2023
-> Added use as a discord bot. Read more [here]().
->
+
+Added use as a discord bot. Read more [here]().
+
 > 04.03.2023
 >
 Added `--no` negations to short-weights model. So far, there may be some shortcomings. If there are any problems, then create an [issue](https://github.com/awekrx/ChatGPT-MidJourney-prompt/issues).
 I would be very grateful for your response.
-
-## Examples
-
-_See more examples in my [gallery](https://github.com/awekrx/MidJourney-Arts)_
-
-### Short-weights model
-
-> prompt: `Sakura blossoms::5, pink flowers::4, Licorice plant::3, Japanese landscape::5, octane render::4, landscape desing::4, red::10, purple::10, , high quality photo::5, soft light::2, sharp-focus::3, hyper realism::4 --v 4 --s 1000 --q 5 --ar 16:9`
-
-<p align="center">
-<image
-  src="./images/arts/2.png"
-  width="512"
-  alt="V4"
-  >
-</p>
-
-> prompt: `Stars::5, galaxy::4, space::5, , , , --v 4 --ar 3:2 --s 1000 --q 5 --ar 1:2`
-
-<p align="center">
-<image
-  src="./images/arts/3.png"
-  width="512"
-  alt="V4"
-  >
-</p>
-
-## Artistic model
-
-> prompt: `Elven assassin with a masked face and intricate runes. Highly detailed photorealism showcases the intricate details of the mask and runic markings. Focused on the assassin's face, with a blurred background. The lighting is a blend of candlelight and twilight, adding a sense of mystery to the character. The style is a mix of ancient and fantasy. Resolution: --ar 16:9 --s 1000 --q 2 --upbeta --v 4`
-
-<p align="center">
-<image
-  src="./images/arts/4.png"
-  width="512"
-  alt="V4"
-  >
-</p>
-
-> prompt: `An elven warrior girl wielding a sword, dressed in armor made of intricate metals and fabrics. She stands against a futuristic background with high-tech elements, rendered with the latest technologies. Focused, blurred background, full-body::5 soft light::1 high quality photo::1 --v 4 --ar 3:2 --s 1000 --q 5`
-
-<p align="center">
-<image
-  src="./images/arts/5.png"
-  width="512"
-  alt="V4"
-  >
-</p>
-<p align="center">
-
-## Niji
-
-> prompt: `Stray dog::3, samurai::5, katana::5, dirt road::3, countryside::3, --niji --q 2`
-
-<p align="center">
-<image
-  src="./images/arts/1.png"
-  width="512"
-  alt="Niji"
-  >
-</p>
 
 ## Getting Started
 
@@ -199,6 +139,67 @@ Parameters:
    ```bash
    py bot.py
    ```
+
+## Examples
+
+_See more examples in my [gallery](https://github.com/awekrx/MidJourney-Arts)_
+
+### Short-weights model
+
+> prompt: `Sakura blossoms::5, pink flowers::4, Licorice plant::3, Japanese landscape::5, octane render::4, landscape desing::4, red::10, purple::10, , high quality photo::5, soft light::2, sharp-focus::3, hyper realism::4 --v 4 --s 1000 --q 5 --ar 16:9`
+
+<p align="center">
+<image
+  src="./images/arts/2.png"
+  width="512"
+  alt="V4"
+  >
+</p>
+
+> prompt: `Stars::5, galaxy::4, space::5, , , , --v 4 --ar 3:2 --s 1000 --q 5 --ar 1:2`
+
+<p align="center">
+<image
+  src="./images/arts/3.png"
+  width="512"
+  alt="V4"
+  >
+</p>
+
+## Artistic model
+
+> prompt: `Elven assassin with a masked face and intricate runes. Highly detailed photorealism showcases the intricate details of the mask and runic markings. Focused on the assassin's face, with a blurred background. The lighting is a blend of candlelight and twilight, adding a sense of mystery to the character. The style is a mix of ancient and fantasy. Resolution: --ar 16:9 --s 1000 --q 2 --upbeta --v 4`
+
+<p align="center">
+<image
+  src="./images/arts/4.png"
+  width="512"
+  alt="V4"
+  >
+</p>
+
+> prompt: `An elven warrior girl wielding a sword, dressed in armor made of intricate metals and fabrics. She stands against a futuristic background with high-tech elements, rendered with the latest technologies. Focused, blurred background, full-body::5 soft light::1 high quality photo::1 --v 4 --ar 3:2 --s 1000 --q 5`
+
+<p align="center">
+<image
+  src="./images/arts/5.png"
+  width="512"
+  alt="V4"
+  >
+</p>
+<p align="center">
+
+## Niji
+
+> prompt: `Stray dog::3, samurai::5, katana::5, dirt road::3, countryside::3, --niji --q 2`
+
+<p align="center">
+<image
+  src="./images/arts/1.png"
+  width="512"
+  alt="Niji"
+  >
+</p>
 
 ## License
 
