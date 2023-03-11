@@ -1,8 +1,11 @@
-# chatGPT-MidJourney-prompt
+# ChatGPT-MidJourney-prompt
 
 This is a ChatGPT based prompt generation model for MidJorney. The purpose of this model is to simplify the creation of images and increase their creativity. By introducing a partial hint, ChatGPT creates a follow-up that can be used to stimulate creativity and provide new ideas.
 
 ## What's new
+>
+> 11.03.2023
+> Added use as a discord bot. Read more [here]().
 >
 > 04.03.2023
 >
@@ -176,6 +179,26 @@ Parameters:
 `colors`: An optional list of integers representing the colors to use for the generated content. This can be one or more values defined in the Settings module. The default value is an empty list.
 
 `Return`: A string representing the generated text. If the text parameter starts with "http", the function will attempt to extract a URL from the beginning of the string and return the URL along with the generated text.
+
+## Discord bot
+
+![Usage preview](./images/usage-preview-discord.png)
+
+> `disclaimer`: at the moment the bot does not have the possibility of all parameters as through the CLI.
+
+1. In addition to the token from [ChatGPT](#edit-config). You will also need your bot token, you can create a bot and get a token [here](https://discord.com/developers/). Add the token to the `bot_token` field in `config.ini`.
+2. Install `requirements` and `discord.py`
+
+   ```bash
+   pip install -r requirements.txt
+   pip install discord
+   ```
+
+3. Run bot
+
+   ```bash
+   py bot.py
+   ```
 
 ## License
 
