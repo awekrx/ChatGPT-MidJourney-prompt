@@ -25,6 +25,7 @@ class Settings:
             "name": f"[{RED}Only artistic model{RESET}] High realism ({BOLD}Works well only on objects. For example: cloth{RESET})",
             "value": "--testp --s 1500",
         },
+        {"name": "v5", "value": "--v 5 --ar 16:9 --s 1000 --q 2"},
     ]
 
     advanced_settings = [{"name": "Yes"}, {"name": "No"}]

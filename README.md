@@ -4,14 +4,9 @@ This is a ChatGPT based prompt generation model for MidJorney. The purpose of th
 
 ## What's new
 >
-> 11.03.2023
+> 17.03.2023
 
-Added use as a discord bot. Read more [here]().
-
-> 04.03.2023
->
-Added `--no` negations to short-weights model. So far, there may be some shortcomings. If there are any problems, then create an [issue](https://github.com/awekrx/ChatGPT-MidJourney-prompt/issues).
-I would be very grateful for your response.
+Added V5 support (beta). Features like V4 later, no time now.
 
 ## Getting Started
 
