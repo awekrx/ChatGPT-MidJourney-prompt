@@ -39,14 +39,14 @@ pip install chatGPTMidJourneyPrompt
 
    # or advanced usage if needed
    promptConfig = {
-      model: "artistic"
-      type: "anime",
-      renderer: "ray tracing",
-      content: "character",
-      aspect_ratio: "1:5",
-      color: "red",
-      url: "example image url"
-   }
+    "model": "artistic",
+    "type": "anime",
+    "renderer": "ray tracing",
+    "content": "character",
+    "aspect_ratio": "1:5",
+    "color": "red",
+    "url": "example image url",
+}
 
    prompt = promptGenerator.V5("any text", config=promptConfig, words=50)
 ```

@@ -3,10 +3,10 @@ import re
 
 from revChatGPT.V1 import Chatbot as ChatbotV1
 from revChatGPT.V3 import Chatbot as ChatbotV3
-from settings.V5 import V5_settings
-from settings.V4 import V4_settings
-from settings.niji import niji_settings
-from settings.testp import testp_settings
+from .settings.V5 import V5_settings
+from .settings.V4 import V4_settings
+from .settings.niji import niji_settings
+from .settings.testp import testp_settings
 
 
 class PromptGenerator:
