@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "revChatGPT"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chatGPTMidJourneyPrompt"
+version = "2.0.0"
+authors = [
+  { name="awekrx", email="d.ipatov.v@gmail.com" },
+]
+description = "This is a ChatGPT based prompt generation model for MidJorney. The purpose of this model is to simplify the creation of images and increase their creativity. By introducing a partial hint, ChatGPT creates a follow-up that can be used to stimulate creativity and provide new ideas."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/awekrx/ChatGPT-MidJourney-prompt"
+"Bug Tracker" = "https://github.com/awekrx/ChatGPT-MidJourney-prompt/issues"

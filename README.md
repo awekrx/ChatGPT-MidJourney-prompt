@@ -1,141 +1,89 @@
 # ChatGPT-MidJourney-prompt
 
-This is a ChatGPT based prompt generation model for MidJorney. The purpose of this model is to simplify the creation of images and increase their creativity. By introducing a partial hint, ChatGPT creates a follow-up that can be used to stimulate creativity and provide new ideas.
+This is a ChatGPT based prompt generation model for MidJourney. The purpose of this model is to simplify the creation of images and increase their creativity. By introducing a partial hint, ChatGPT creates a follow-up that can be used to stimulate creativity and provide new ideas.
 
 ## What's new
 >
-> 17.03.2023
+> 24.03.2023
 
-Added V5 support (beta). Features like V4 later, no time now.
+Create PyPi project. Update file structure, add api key authentication to ChatGPT.
+__CLI-app and discord-bot will be available within a few days.__
 
-## Getting Started
-
-### Installing
-
-Clone this repository to your local machine:
+## Installation
 
 ```bash
-git clone https://github.com/awekrx/ChatGPT-MidJourney-prompt.git
-```
-
-Then install the required packages:
-
-```bash
-pip install -r requirements.txt
+pip install chatGPTMidJourneyPrompt
 ```
 
 ## Usage
 
-### Edit config
+```py
+   from chatGPTMidJourneyPrompt.mjPrompt import PromptGenerator
 
-Open `config.ini` and add `email` and `password` there if you are not using OAuth authorization.
-Otherwise open [ChatGPT](https://chat.openai.com) and get the `__Secure-next-auth.session-token` cookieand write it to the `session-token`.
+   # supported authorization methods: via email and password, via token, via api key
+   config = {
+      "email": "your_email",
+      "password": "your_password",
+      # or
+      "session_token": "your_session_token",
+      # or
+      "api_key": "your_api_key",
+   }
 
-### Start
+   promptGenerator = PromptGenerator(config)
 
-```bash
-py main.py
+   prompt = promptGenerator.V5("any text")
+   prompt = promptGenerator.V4("any text")
+   prompt = promptGenerator.niji("any text")
+   prompt = promptGenerator.testp("any text")
+
+   # or advanced usage if needed
+   promptConfig = {
+      model: "artistic"
+      type: "anime",
+      renderer: "ray tracing",
+      content: "character",
+      aspect_ratio: "1:5",
+      color: "red",
+      url: "example image url"
+   }
+
+   prompt = promptGenerator.V5("any text", config=promptConfig, words=50)
 ```
 
-To use this model, you can input the following commands in the console:
+## More about config
 
-1. Select the prompt model;
-   - The short model creates prompts in the format: `Planet::5, rings::4, crater::3, star clusters::5, atmosphere::4, reflection::3, space::5`
-   - The art model creates in the format: `A Victorian-style chair with chrome and ornate decorations reflects a distorted image in the water on the ground. The intricate patterns on the chair add an air of sophistication and elegance to any room. Lighting: Candle Light. Style: Victorian. Details: Cell Shading, atmosphere, ray tracing.`
-2. Select the mid-journey model;
-   - V4 - MidJourney default model;
-   - Niji - MidJourney test model for anime;
-   - Realistic(testp) - MidJourney test model for maximum realism;
-3. Add image description and description count;
-   - Anything you wish;
-   - You can specify at the beginning of the url the image to generate based on it;
-4. Choose advanced settings;
+### All config properties
 
-If you choose advanced settings:
+|model|type|renderer|content|aspect_ratio|color|url|
+|---|---|---|---|---|---|---|
+|weights, artistic|anime, photorealistic, avatar, couple avatar|octane, unreal engine, ray tracing, mixed|character, landscape, object, light, particles|depends on the model|any|any|
 
-1. Select image type;
-   - Adds the selected style to the image;
-   - Anime - anime cartoon style;
-   - Photorealistic - maximum quality details;
-   - Avatar - focus on the center of the image;
-   - Couple avatar - Especially for creating avatars that you can share with your soulmate ♡;
-2. Choose aspect ratio;
-   - I think everything is clear here;
-3. Choose rendering:
-   - Changes the generation style. Object details. You'll understand better if you test it;
-4. Choose content refinement;
-   - Specifies what exactly we want to see in the image;
-   - Combining the character description and, for example, the particle mode, you can get very interesting images;
-5. Choose color change;
-   - Choose dominant colors separated by commas;
+### Aspect ratios
 
-![Usage preview](./images/usage-preview.png)
+|V5|V4|niji|testp|
+|---|---|---|---|
+|any|1:1, 1:2, 2:1, 2:3, 3:2, 4:5, 5:4, 4:7, 7:4, 16:9, 9:16|1:2, 2:1|2:3, 3:2|
 
-## Alternative usage
+### Model properties support
 
-You can also use this as a function in python.
+|property|V5|V4|niji|testp|
+|---|---|---|---|---|
+|model|+|+|+|-|
+|type|+|+|-|-|
+|renderer|+|+|+|-|
+|content|+|+|+|-|
+|aspect_ratio|+|+|+|+|
+|color|+|+|+|-|
+|url|+|+|+|+|
 
-```python
-from modules.prompt import Prompt
-import configparser
+<details>
 
-config = configparser.ConfigParser()
-config.read("config.ini")
+<summary>
 
-auth = {
-    "email": config["ChatGPT"]["email"],
-    "password": config["ChatGPT"]["password"],
-    "session_token": config["ChatGPT"]["session_token"]
-}
+## Results
 
-prompter = Prompt(auth)
-prompter.ask()
-```
-
-With `prompter.ask()` you can create a prompt.
-Parameters:
-
-`text`: A string representing the prompt for generating text.
-
-`count_words`: An optional integer representing the number of words to generate in response to the prompt. The default value is 25.
-
-`type`: An optional integer representing the type of content to generate. This can be one of several values defined in the Settings module. The default value is 0.
-
-`resolution`: An optional integer representing the resolution of the generated content. This can be one of several values defined in the Settings module. The default value is 0.
-
-`renderer`: An optional integer representing the renderer to use for the generated content. This can be one of several values defined in the Settings module. The default value is 0.
-
-`content`: An optional integer representing the type of content to generate. This can be one of several values defined in the Settings module. The default value is 0.
-
-`prompt_model`: An optional integer representing the type of prompt model to use for generating text. This can be one of several values defined in the Settings module. The default value is 0.
-
-`mj_model`: An optional integer representing the type of mid-journey model to use for generating text. This can be one of several values defined in the Settings module. The default value is 0.
-
-`colors`: An optional list of integers representing the colors to use for the generated content. This can be one or more values defined in the Settings module. The default value is an empty list.
-
-`Return`: A string representing the generated text. If the text parameter starts with "http", the function will attempt to extract a URL from the beginning of the string and return the URL along with the generated text.
-
-## Discord bot
-
-![Usage preview](./images/usage-preview-discord.png)
-
-> `disclaimer`: at the moment the bot does not have the possibility of all parameters as through the CLI.
-
-1. In addition to the token from [ChatGPT](#edit-config). You will also need your bot token, you can create a bot and get a token [here](https://discord.com/developers/). Add the token to the `bot_token` field in `config.ini`.
-2. Install `requirements` and `discord.py`
-
-   ```bash
-   pip install -r requirements.txt
-   pip install discord
-   ```
-
-3. Run bot
-
-   ```bash
-   py bot.py
-   ```
-
-## Examples
+</summary>
 
 _See more examples in my [gallery](https://github.com/awekrx/MidJourney-Arts)_
 
@@ -143,58 +91,29 @@ _See more examples in my [gallery](https://github.com/awekrx/MidJourney-Arts)_
 
 > prompt: `Sakura blossoms::5, pink flowers::4, Licorice plant::3, Japanese landscape::5, octane render::4, landscape desing::4, red::10, purple::10, , high quality photo::5, soft light::2, sharp-focus::3, hyper realism::4 --v 4 --s 1000 --q 5 --ar 16:9`
 
-<p align="center">
-<image
-  src="./images/arts/2.png"
-  width="512"
-  alt="V4"
-  >
-</p>
+![](https://github.com/awekrx/ChatGPT-MidJourney-prompt/blob/master/images/arts/2.png?raw=true)
 
 > prompt: `Stars::5, galaxy::4, space::5, , , , --v 4 --ar 3:2 --s 1000 --q 5 --ar 1:2`
 
-<p align="center">
-<image
-  src="./images/arts/3.png"
-  width="512"
-  alt="V4"
-  >
-</p>
+![](https://github.com/awekrx/ChatGPT-MidJourney-prompt/blob/master/images/arts/3.png?raw=true)
 
 ## Artistic model
 
 > prompt: `Elven assassin with a masked face and intricate runes. Highly detailed photorealism showcases the intricate details of the mask and runic markings. Focused on the assassin's face, with a blurred background. The lighting is a blend of candlelight and twilight, adding a sense of mystery to the character. The style is a mix of ancient and fantasy. Resolution: --ar 16:9 --s 1000 --q 2 --upbeta --v 4`
 
-<p align="center">
-<image
-  src="./images/arts/4.png"
-  width="512"
-  alt="V4"
-  >
-</p>
+![](https://github.com/awekrx/ChatGPT-MidJourney-prompt/blob/master/images/arts/4.png?raw=true)
 
 > prompt: `An elven warrior girl wielding a sword, dressed in armor made of intricate metals and fabrics. She stands against a futuristic background with high-tech elements, rendered with the latest technologies. Focused, blurred background, full-body::5 soft light::1 high quality photo::1 --v 4 --ar 3:2 --s 1000 --q 5`
 
-<p align="center">
-<image
-  src="./images/arts/5.png"
-  width="512"
-  alt="V4"
-  >
-</p>
-<p align="center">
+![](https://github.com/awekrx/ChatGPT-MidJourney-prompt/blob/master/images/arts/5.png?raw=true)
 
 ## Niji
 
 > prompt: `Stray dog::3, samurai::5, katana::5, dirt road::3, countryside::3, --niji --q 2`
 
-<p align="center">
-<image
-  src="./images/arts/1.png"
-  width="512"
-  alt="Niji"
-  >
-</p>
+![](https://github.com/awekrx/ChatGPT-MidJourney-prompt/blob/master/images/arts/1.png?raw=true)
+
+</details>
 
 ## License
 
@@ -202,13 +121,9 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-Thanks a lot to the development of AI and separately to [СhatGPT](https://chat.openai.com) for generating the Readme.
+Thanks a lot to the development of AI and separately to [ChatGPT](https://chat.openai.com) for generating the Readme.
 And also [acheong08](https://github.com/acheong08) for creating [ChatGPT](https://github.com/acheong08/ChatGPT).
 
 ## Future
 
-More generation options:
-
-- styles
-- lighting
-- artists style
+More advanced options for generating prompts
