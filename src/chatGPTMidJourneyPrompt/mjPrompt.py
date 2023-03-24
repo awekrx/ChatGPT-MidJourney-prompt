@@ -80,16 +80,16 @@ class PromptGenerator:
     ):
         parameters = [
             {
-                "config_name": "type",
-                "settings_name": "types",
-            },
-            {
                 "config_name": "renderer",
                 "settings_name": "renderers",
             },
             {
                 "config_name": "content",
                 "settings_name": "contents",
+            },
+            {
+                "config_name": "type",
+                "settings_name": "types",
             },
             {
                 "config_name": "aspect_ratio",
@@ -140,6 +140,8 @@ class PromptGenerator:
 
         mj_prompt = self.__check_and_add_url(mj_prompt, config)
 
+        mj_prompt = self.__check_and_add_color(mj_prompt, config)
+
         mj_prompt = self.__add_custom_parameters_to_prompt(
             mj_prompt, config, V5_settings, ["aspect_ratio"]
         )
@@ -148,8 +150,6 @@ class PromptGenerator:
             self.aspect_ratio_regex, config["aspect_ratio"]
         ):
             mj_prompt += " " + f"--ar {config['aspect_ratio']}"
-
-        mj_prompt = self.__check_and_add_color(mj_prompt, config)
 
         mj_prompt += " --v 5 --s 1000 --q 2"
 
@@ -170,11 +170,11 @@ class PromptGenerator:
 
         mj_prompt = self.__check_and_add_url(mj_prompt, config)
 
+        mj_prompt = self.__check_and_add_color(mj_prompt, config)
+
         mj_prompt = self.__add_custom_parameters_to_prompt(
             mj_prompt, config, V4_settings
         )
-
-        mj_prompt = self.__check_and_add_color(mj_prompt, config)
 
         mj_prompt += " --v 4 --s 1000 --q 5"
 
@@ -195,11 +195,11 @@ class PromptGenerator:
 
         mj_prompt = self.__check_and_add_url(mj_prompt, config)
 
+        mj_prompt = self.__check_and_add_color(mj_prompt, config)
+
         mj_prompt = self.__add_custom_parameters_to_prompt(
             mj_prompt, config, niji_settings, ["type"]
         )
-
-        mj_prompt = self.__check_and_add_color(mj_prompt, config)
 
         mj_prompt += " --niji --q 2"
 
