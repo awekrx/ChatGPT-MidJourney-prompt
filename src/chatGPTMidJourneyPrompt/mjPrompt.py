@@ -3,6 +3,7 @@ import re
 
 from revChatGPT.V1 import Chatbot as ChatbotV1
 from revChatGPT.V3 import Chatbot as ChatbotV3
+from .chatbots.minimax import ChatbotMiniMax
 from .settings.V5 import V5_settings
 from .settings.V4 import V4_settings
 from .settings.niji import niji_settings
@@ -15,7 +16,18 @@ class PromptGenerator:
     aspect_ratio_regex = r"^\d+:\d+$"
 
     def __init__(self, config):
-        if config["api_key"]:
+        provider = config.get("provider", "chatgpt")
+        if provider == "minimax":
+            api_key = config.get("minimax_api_key") or os.environ.get("MINIMAX_API_KEY")
+            if not api_key:
+                raise ValueError(
+                    "MiniMax API key required: set 'minimax_api_key' in config "
+                    "or the MINIMAX_API_KEY environment variable"
+                )
+            model = config.get("minimax_model", "MiniMax-M2.7")
+            temperature = float(config.get("temperature", 0.7))
+            self.chatbot = ChatbotMiniMax(api_key, model, temperature)
+        elif config.get("api_key"):
             self.chatbot = ChatbotV3(config["api_key"])
         else:
             self.chatbot = ChatbotV1(config)

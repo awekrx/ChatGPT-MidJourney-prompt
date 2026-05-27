@@ -51,6 +51,47 @@ pip install chatGPTMidJourneyPrompt
    prompt = promptGenerator.V5("any text", config=promptConfig, words=50)
 ```
 
+## MiniMax Provider
+
+You can use [MiniMax](https://www.minimax.io/) as an alternative LLM backend. MiniMax's M2.7 model offers a 204K context window and is accessed via an OpenAI-compatible API, so no extra SDK is required.
+
+Set your API key via the environment variable or pass it in the config:
+
+```bash
+export MINIMAX_API_KEY="your_minimax_api_key"
+```
+
+```py
+from chatGPTMidJourneyPrompt.mjPrompt import PromptGenerator
+
+# Minimal config — reads MINIMAX_API_KEY from the environment
+config = {"provider": "minimax"}
+promptGenerator = PromptGenerator(config)
+
+prompt = promptGenerator.V5("cyberpunk cityscape at night")
+print(prompt)
+# => cyberpunk city::5, neon lights::4, rain::3 --v 5 --s 1000 --q 2
+
+# Full config with explicit key, model, and temperature
+config = {
+    "provider": "minimax",
+    "minimax_api_key": "your_minimax_api_key",
+    "minimax_model": "MiniMax-M2.7",   # or MiniMax-M2.7-highspeed, MiniMax-M2.5, MiniMax-M2.5-highspeed
+    "temperature": 0.7,                 # clamped to (0.0, 1.0]
+}
+promptGenerator = PromptGenerator(config)
+prompt = promptGenerator.niji("samurai in the rain", config={"model": "artistic"})
+```
+
+Available MiniMax models:
+
+| Model | Context | Speed |
+|---|---|---|
+| `MiniMax-M2.7` *(default)* | 204K | Standard |
+| `MiniMax-M2.7-highspeed` | 204K | Fast |
+| `MiniMax-M2.5` | 204K | Standard |
+| `MiniMax-M2.5-highspeed` | 204K | Fast |
+
 ## More about config
 
 ### All config properties
